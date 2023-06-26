@@ -1,0 +1,28 @@
+t=input()
+n1=1 
+n2=1
+ori=""
+i=0
+while(i!=len(t)):
+    z=''
+    rem=''
+    dividend=0
+    if(t[i]=='f'):
+        i=i+1
+        while(t[i]!='r'):
+           z=z+t[i]
+           i=i+1
+        if(t[i]=='r'):
+            i=i+1
+            while(i!=len(t) and t[i]!='f'):
+                rem=rem+t[i]
+                i=i+1
+    ntr=int((n2*(n2+1)*(n2+2)*(n2+3))/24)
+    np=int((n1*(n1+1)*(n1+2))/6)
+    m=ntr*int(z)
+    dividend=m+int(rem)
+    msg=dividend^np
+    ori=ori+chr(msg)
+    n1=n1+1 
+    n2=n2+1
+print(ori)
